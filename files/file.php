@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="app/styles/main.css">
 	</head>
 	<body>
-		<h1 class="fz-32 fw-600">Lorem Ipsum</h1>
+		<h1 class="fz-64 fw-600">Lorem Ipsum</h1>
 		<h2 class="fz-28 fw-600">Lorem Ipsum</h2>
 		<h3 class="fz-24 fw-600">Lorem Ipsum</h3>
 		<h4 class="fz-22 fw-600">Lorem Ipsum</h4>

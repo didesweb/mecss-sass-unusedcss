@@ -1,12 +1,12 @@
 {
-  "name": "sass",
+  "name": "workflowDidesweb",
   "version": "1.0.0",
   "author": "Roque Arnás Izquierdo",
   "homepage": "https://didesweb.com/",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/didesweb/sass"
+    "url": "git://github.com/didesweb/"
   },
   "license": "ISC",
   "devDependencies": {
@@ -16,6 +16,6 @@
     "gulp-plumber": "^1.1.0",
     "gulp-purgecss": "^5.0.0",
     "gulp-sass": "^3.1.0",
-    "gulp-rename": "^2.0"
+    "gulp-uglify": "^2.1.2"
   }
 }

@@ -1,0 +1,1 @@
+!function(c){c("#nav-icon").click(function(){c(this).toggleClass("open"),c(".navbar").toggleClass("open")}),c("#btn-call-form-sem").click(function(){c("html, body").animate({scrollTop:0},"fast"),setTimeout(function(){c("._x71953552 input").focus()},500)}),c(document).on("click",".icon-search-form",function(){console.log("clic"),c("#searchsubmit").trigger("click")})}(jQuery);
