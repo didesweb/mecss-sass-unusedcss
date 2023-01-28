@@ -1,0 +1,33 @@
+/* me.css by Roque Arnás Izquierdo https://didesweb.com/me-css/ */
+
+/* breakpoints */
+$sm:     576px;
+$md:     768px;
+$lg:     992px;
+$xl:    1200px;
+$xxl:   1400px;
+$xxxl:  1600px;
+
+/* box-sizes */
+$box-size-sm:    540px;
+$box-size-md:    720px;
+$box-size-lg:    960px;
+$box-size-xl:   1160px;
+$box-size-xxl:  1360px;
+$box-size-xxxl: 1560px;
+
+/* grids columns */
+$columns-number: 12;
+
+/* spaces */
+$space-to: 30;  
+$space-step: 5;
+$space-unit: 'px';
+
+/* font sizes */
+$font-from: 6;
+$font-to: 80;
+$font-step: 2;
+$font-to-2: 40;
+$font-step-2: 4;
+$font-unit: 'px';

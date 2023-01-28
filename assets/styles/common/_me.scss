@@ -1,0 +1,217 @@
+/* me.css by Roque Arnás Izquierdo https://didesweb.com/me-css/ */
+
+/* box */
+.box{width:100%}
+@media(min-width:  $sm) {.box {max-width:$box-size-sm}}
+@media(min-width:  $md) {.box {max-width:$box-size-md}}
+@media(min-width:  $lg) {.box {max-width:$box-size-lg}}
+@media(min-width:  $xl) {.box {max-width:$box-size-xl}}  
+@if variable-exists(xxl) { @media(min-width: $xxl) {.box {max-width:$box-size-xxl}} }
+@if variable-exists(xxxl) { @media(min-width:$xxxl) {.box {max-width:$box-size-xxxl}} }
+
+/* positions */
+@include xs { @include positions($breakpoint: ''); }
+@include sm { @include positions($breakpoint: 'sm-'); } 
+@include md { @include positions($breakpoint: 'md-'); }
+@include lg { @include positions($breakpoint: 'lg-'); }
+@include xl { @include positions($breakpoint: 'xl-'); }
+@if variable-exists(xxl) { @include xxl { @include positions($breakpoint: 'xxl-'); } }
+@if variable-exists(xxxl) { @include xxxl { @include positions($breakpoint: 'xxxl-'); } }
+
+/* floats */
+@include xs { @include floats($breakpoint: ''); }
+@include sm { @include floats($breakpoint: 'sm-'); }
+@include md { @include floats($breakpoint: 'md-'); }
+@include lg { @include floats($breakpoint: 'lg-'); }
+@include xl { @include floats($breakpoint: 'xl-'); }
+@if variable-exists(xxl) { @include xxl { @include floats($breakpoint: 'xxl-'); } }
+@if variable-exists(xxxl) { @include xxxl { @include floats($breakpoint: 'xxxl-'); } }
+
+/*clear*/
+@include xs { @include clears($breakpoint: ''); }
+@include sm { @include clears($breakpoint: 'sm-'); }
+@include md { @include clears($breakpoint: 'md-'); }
+@include lg { @include clears($breakpoint: 'lg-'); }
+@include xl { @include clears($breakpoint: 'xl-'); }
+@if variable-exists(xxl) { @include xxl { @include clears($breakpoint: 'xxl-'); } }
+@if variable-exists(xxxl) { @include xxxl { @include clears($breakpoint: 'xxxl-'); } }
+
+/*box-sizing*/
+@include xs { @include boxSizings($breakpoint: ''); }
+
+/*overflow*/
+@include xs { @include overflows($breakpoint: ''); }
+@include sm { @include overflows($breakpoint: 'sm-'); }
+@include md { @include overflows($breakpoint: 'md-'); }
+@include lg { @include overflows($breakpoint: 'lg-'); }
+@include xl { @include overflows($breakpoint: 'xl-'); }
+@if variable-exists(xxl) { @include xxl { @include overflows($breakpoint: 'xxl-'); } }
+@if variable-exists(xxxl) { @include xxxl { @include overflows($breakpoint: 'xxxl-'); } }
+
+/*overflow-style*/
+@include xs { @include overflowStyles($breakpoint: ''); }
+
+/*resize*/
+@include xs { @include Resizes($breakpoint: ''); }
+
+/*cursor*/
+@include xs { @include Cursors($breakpoint: ''); }
+
+/* font-weight */
+@include xs { @include fontWeights($breakpoint: ''); }
+   
+/*font-style*/
+@include xs { @include fontStyles($breakpoint: ''); }
+
+/*vertical-align*/
+@include xs { @include verticalAligns($breakpoint: ''); }
+
+/* text-align */
+@include xs { @include textAligns($breakpoint: ''); }
+@include sm { @include textAligns($breakpoint: 'sm-'); }
+@include md { @include textAligns($breakpoint: 'md-'); }
+@include lg { @include textAligns($breakpoint: 'lg-'); }
+@include xl { @include textAligns($breakpoint: 'xl-'); }
+@if variable-exists(xxl) { @include xxl { @include textAligns($breakpoint: 'xxl-'); } }
+@if variable-exists(xxxl) { @include xxxl { @include textAligns($breakpoint: 'xxxl-'); } }
+
+/*visibility*/
+@include xs { @include visibilitys($breakpoint: ''); }
+@include sm { @include visibilitys($breakpoint: 'sm-'); }
+@include md { @include visibilitys($breakpoint: 'md-'); }
+@include lg { @include visibilitys($breakpoint: 'lg-'); }
+@include xl { @include visibilitys($breakpoint: 'xl-'); }
+@if variable-exists(xxl) { @include xxl { @include visibilitys($breakpoint: 'xxl-'); } }
+@if variable-exists(xxxl) { @include xxxl { @include visibilitys($breakpoint: 'xxxl-'); } }
+
+/*text-transform*/ 
+@include xs { @include textTransforms($breakpoint: ''); }
+
+/*text-decoration*/    
+@include xs { @include textDecorations($breakpoint: ''); }
+
+/*white-space*/
+@include xs { @include whiteSpaces($breakpoint: ''); }
+
+/*white-space-collapse*/
+@include xs { @include whiteSpaceCollapses($breakpoint: ''); }
+
+/*word-break*/
+@include xs { @include wordBreaks($breakpoint: ''); }
+
+/*word-wraps*/
+@include xs { @include wordWraps($breakpoint: ''); }
+
+/*background*/
+@include xs { @include backgrounds($breakpoint: ''); }
+
+/*list-style-type*/
+@include xs { @include listStyles($breakpoint: ''); }
+
+/*outline*/
+@include xs { @include outlines($breakpoint: ''); }
+
+/*display*/
+@include xs { @include displays($breakpoint: ''); }
+@include sm { @include displays($breakpoint: 'sm-'); }
+@include md { @include displays($breakpoint: 'md-'); }
+@include lg { @include displays($breakpoint: 'lg-'); }
+@include xl { @include displays($breakpoint: 'xl-'); }
+@if variable-exists(xxl) { @include xxl { @include displays($breakpoint: 'xxl-'); } }
+@if variable-exists(xxxl) { @include xxxl { @include displays($breakpoint: 'xxxl-'); } }
+
+/* fontstyle*/
+@include xs { @include fontStyles($breakpoint: ''); }
+
+/*flex direction*/
+@include xs { @include flexDirections($breakpoint: ''); }
+@include sm { @include flexDirections($breakpoint: 'sm-'); }
+@include md { @include flexDirections($breakpoint: 'md-'); }
+@include lg { @include flexDirections($breakpoint: 'lg-'); }
+@include xl { @include flexDirections($breakpoint: 'xl-'); }
+@if variable-exists(xxl) { @include xxl { @include flexDirections($breakpoint: 'xxl-'); } }
+@if variable-exists(xxxl) { @include xxxl { @include flexDirections($breakpoint: 'xxxl-'); } }
+
+/*justify-content*/
+@include xs { @include justifyContents($breakpoint: ''); }
+@include sm { @include justifyContents($breakpoint: 'sm-'); }
+@include md { @include justifyContents($breakpoint: 'md-'); }
+@include lg { @include justifyContents($breakpoint: 'lg-'); }
+@include xl { @include justifyContents($breakpoint: 'xl-'); }
+@if variable-exists(xxl) { @include xxl { @include justifyContents($breakpoint: 'xxl-'); } }
+@if variable-exists(xxxl) { @include xxxl { @include justifyContents($breakpoint: 'xxxl-'); } }
+
+/*align-self*/
+@include xs { @include alignSelfs($breakpoint: ''); }
+@include sm { @include alignSelfs($breakpoint: 'sm-'); }
+@include md { @include alignSelfs($breakpoint: 'md-'); }
+@include lg { @include alignSelfs($breakpoint: 'lg-'); }
+@include xl { @include alignSelfs($breakpoint: 'xl-'); }
+@if variable-exists(xxl) { @include xxl { @include alignSelfs($breakpoint: 'xxl-'); } }
+@if variable-exists(xxxl) { @include xxxl { @include alignSelfs($breakpoint: 'xxxl-'); } }
+
+/*align-content*/
+@include xs { @include alignContents($breakpoint: ''); }
+@include sm { @include alignContents($breakpoint: 'sm-'); }
+@include md { @include alignContents($breakpoint: 'md-'); }
+@include lg { @include alignContents($breakpoint: 'lg-'); }
+@include xl { @include alignContents($breakpoint: 'xl-'); }
+@if variable-exists(xxl) { @include xxl { @include alignContents($breakpoint: 'xxl-'); } }
+@if variable-exists(xxxl) { @include xxxl { @include alignContents($breakpoint: 'xxxl-'); } }
+
+/*align-items*/
+@include xs { @include alignItems($breakpoint: ''); }
+@include sm { @include alignItems($breakpoint: 'sm-'); }
+@include md { @include alignItems($breakpoint: 'md-'); }
+@include lg { @include alignItems($breakpoint: 'lg-'); }
+@include xl { @include alignItems($breakpoint: 'xl-'); }
+@if variable-exists(xxl) { @include xxl { @include alignItems($breakpoint: 'xxl-'); } }
+@if variable-exists(xxxl) { @include xxxl { @include alignItems($breakpoint: 'xxxl-'); } }
+
+/*border-style*/
+@include xs { @include borderStyles($breakpoint: ''); }
+
+/*sizes*/
+@include xs { @include sizes($breakpoint: ''); }
+@include sm { @include sizes($breakpoint: 'sm-'); }
+@include md { @include sizes($breakpoint: 'md-'); }
+@include lg { @include sizes($breakpoint: 'lg-'); }
+@include xl { @include sizes($breakpoint: 'xl-'); }
+@if variable-exists(xxl) { @include xxl { @include sizes($breakpoint: 'xxl-'); } }
+@if variable-exists(xxxl) { @include xxxl { @include sizes($breakpoint: 'xxxl-'); }   }
+
+/* grids */
+@include xs { @include grids($breakpoint: ''); }
+@include sm { @include grids($breakpoint: 'sm'); }
+@include md { @include grids($breakpoint: 'md'); }
+@include lg { @include grids($breakpoint: 'lg'); }
+@include xl { @include grids($breakpoint: 'xl'); }
+@if variable-exists(xxl) { @include xxl { @include grids($breakpoint: 'xxl'); } }
+@if variable-exists(xxxl) { @include xxxl { @include grids($breakpoint: 'xxxl'); } }
+
+/* margins */
+@include xs { @include margins($breakpoint: ''); }
+@include sm { @include margins($breakpoint: 'sm-'); }
+@include md { @include margins($breakpoint: 'md-'); }
+@include lg { @include margins($breakpoint: 'lg-'); }
+@include xl { @include margins($breakpoint: 'xl-'); }
+@if variable-exists(xxl) { @include xxl { @include margins($breakpoint: 'xxl-'); } }
+@if variable-exists(xxxl) { @include xxxl { @include margins($breakpoint: 'xxxl-'); } }
+
+/* paddings */
+@include xs { @include paddings($breakpoint: ''); }
+@include sm { @include paddings($breakpoint: 'sm-'); }
+@include md { @include paddings($breakpoint: 'md-'); }
+@include lg { @include paddings($breakpoint: 'lg-'); }
+@include xl { @include paddings($breakpoint: 'xl-'); }
+@if variable-exists(xxl) { @include xxl { @include paddings($breakpoint: 'xxl-'); } }
+@if variable-exists(xxxl) { @include xxxl { @include paddings($breakpoint: 'xxxl-'); } }
+
+/* fontSizes */
+@include xs { @include fontSizes($breakpoint: ''); }
+@include sm { @include fontSizes($breakpoint: 'sm-'); }
+@include md { @include fontSizes($breakpoint: 'md-'); }
+@include lg { @include fontSizes($breakpoint: 'lg-'); }
+@include xl { @include fontSizes($breakpoint: 'xl-'); }
+@if variable-exists(xxl) { @include xxl { @include fontSizes($breakpoint: 'xxl-'); } }
+@if variable-exists(xxxl) { @include xxxl { @include fontSizes($breakpoint: 'xxxl-'); } }

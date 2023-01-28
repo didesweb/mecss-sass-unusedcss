@@ -1,0 +1,369 @@
+/* me.css by Roque Arnás Izquierdo https://didesweb.com/me-css/ */
+
+@mixin xs { @content; }
+@mixin sm { @media (min-width: #{$sm}) { @content; } }
+@mixin md { @media (min-width: #{$md}) { @content; } }
+@mixin lg { @media (min-width: #{$lg}) { @content; } }
+@mixin xl { @media (min-width: #{$xl}) { @content; } }
+@mixin xxl { @media (min-width: #{$xxl}) { @content; } } 
+@mixin xxxl { @media (min-width: #{$xxxl}) { @content; } } 
+
+
+@mixin grids($breakpoint) {
+    @for $column from 1 to $columns-number+1 {
+    	@if $breakpoint == '' { 
+        	.col-#{$column} {
+        	    flex:0 0  (100% * $column) / $columns-number;
+        	    max-width: (100% * $column) / $columns-number
+        	}
+        } @else {
+	        .col-#{$breakpoint}-#{$column} {
+	            flex:0 0  (100% * $column) / $columns-number;
+	            max-width: (100% * $column) / $columns-number
+	        }
+        }
+    }
+    @for $column from 1 to $columns-number+1 {
+    	@if $breakpoint == '' { 
+    		.offset-#{$column} {
+    		    margin-left: (100% * $column) / $columns-number;
+    		}
+        } @else {
+        	.offset-#{$breakpoint}-#{$column} {
+        	    margin-left: (100% * $column) / $columns-number;
+        	}
+        }
+    }
+    @for $column from 1 to $columns-number+1 {
+    	@if $breakpoint == '' { 
+    		.order-#{$column} {
+    		    order: $column;
+    		}
+        } @else {
+        	.order-#{$breakpoint}-#{$column} {
+        	    order: $column;
+        	}
+        }
+    }
+}
+
+@mixin spaces-loop($className, $breakpoint, $styleName, $styleNameb) {
+  $i: 0;
+  @while $i <= $space-to {
+    #{$className + $breakpoint + $i} { 
+      #{$styleName}: #{$i + $space-unit};
+      @if $styleNameb != '' {
+      	#{$styleNameb}: #{$i + $space-unit}; 
+      }
+    }
+    $i: $i + $space-step;
+  }
+}
+
+@mixin paddings($breakpoint) {
+	@include spaces-loop('.p-', $breakpoint, 'padding', '');
+	@include spaces-loop('.pl-', $breakpoint, 'padding-left', '');
+	@include spaces-loop('.pr-', $breakpoint, 'padding-left', '');
+	@include spaces-loop('.px-', $breakpoint, 'padding-left', 'padding-right'); 
+	@include spaces-loop('.pt-', $breakpoint, 'padding-top', '');
+	@include spaces-loop('.pb-', $breakpoint, 'padding-bottom', '');
+	@include spaces-loop('.py-', $breakpoint, 'padding-top', 'padding-bottom');
+}
+
+@mixin margins($breakpoint) {
+	@include spaces-loop('.m-', $breakpoint, 'margin', '');
+	@include spaces-loop('.ml-', $breakpoint, 'margin-left', '');
+	@include spaces-loop('.mr-', $breakpoint, 'margin-left', '');
+	@include spaces-loop('.mx-', $breakpoint, 'margin-left', 'margin-right');
+	@include spaces-loop('.mt-', $breakpoint, 'margin-top', '');
+	@include spaces-loop('.mb-', $breakpoint, 'margin-bottom', '');
+	@include spaces-loop('.my-', $breakpoint, 'margin-top', 'margin-bottom');
+}
+
+@mixin positions($breakpoint) {
+	.pos-#{$breakpoint}s{position:static}
+	.pos-#{$breakpoint}r{position:relative} 
+	.pos-#{$breakpoint}a{position:absolute}
+	.pos-#{$breakpoint}f{position:fixed}
+}
+
+@mixin floats($breakpoint) {
+	.fl-#{$breakpoint}l{float:left}
+	.fl-#{$breakpoint}r{float:right} 
+	.fl-#{$breakpoint}n{float:none} 
+}
+
+@mixin textAligns($breakpoint) {
+	.ta-#{$breakpoint}l{text-align:left}
+	.ta-#{$breakpoint}r{text-align:right} 
+	.ta-#{$breakpoint}c{text-align:center} 
+	.ta-#{$breakpoint}j{text-align:justify} 
+}
+
+@mixin clears($breakpoint) {
+	.cl-#{$breakpoint}n{clear:none}
+	.cl-#{$breakpoint}l{clear:left} 
+	.cl-#{$breakpoint}r{clear:right} 
+	.cl-#{$breakpoint}b{clear:both} 
+}
+
+@mixin overflows($breakpoint) {
+	.ov-#{$breakpoint}v{overflow:visible}
+	.ov-#{$breakpoint}h{overflow:hidden} 
+	.ov-#{$breakpoint}s{overflow:scroll} 
+	.ov-#{$breakpoint}a{overflow:auto} 
+	.ov-#{$breakpoint}u{overflow:unset} 
+	.ov-#{$breakpoint}c{overflow:clip} 
+
+	.ovx-#{$breakpoint}v{overflow-x:visible}
+	.ovx-#{$breakpoint}h{overflow-x:hidden} 
+	.ovx-#{$breakpoint}s{overflow-x:scroll} 
+	.ovx-#{$breakpoint}a{overflow-x:auto} 
+	.ovx-#{$breakpoint}u{overflow-x:unset} 
+	.ovx-#{$breakpoint}c{overflow-x:clip} 
+
+	.ovy-#{$breakpoint}v{overflow-y:visible}
+	.ovy-#{$breakpoint}h{overflow-y:hidden} 
+	.ovy-#{$breakpoint}s{overflow-y:scroll} 
+	.ovy-#{$breakpoint}a{overflow-y:auto} 
+	.ovy-#{$breakpoint}u{overflow-y:unset} 
+	.ovy-#{$breakpoint}c{overflow-y:clip} 
+}
+
+@mixin overflowStyles($breakpoint) {
+	.ovs-#{$breakpoint}a{overflow-style:auto} 
+	.ovs-#{$breakpoint}s{overflow-style:scrollbar} 
+	.ovs-#{$breakpoint}p{overflow-style:panner}
+	.ovs-#{$breakpoint}m{overflow-style:move} 
+	.ovs-#{$breakpoint}mq{overflow-style:marquee} 
+	.ovs-#{$breakpoint}u{overflow-style:unset} 
+}
+
+@mixin boxSizings($breakpoint) {
+	.bxz-#{$breakpoint}cb{box-sizing:content-box}
+	.bxz-#{$breakpoint}bb{box-sizing:border-box}
+	.bxz-#{$breakpoint}in{box-sizing:inherit}
+}
+
+@mixin verticalAligns($breakpoint) {
+	.va-#{$breakpoint}bl{vertical-align:baseline}
+	.va-#{$breakpoint}t{vertical-align:top} 
+	.va-#{$breakpoint}m{vertical-align:middle} 
+	.va-#{$breakpoint}b{vertical-align:bottom} 
+	.va-#{$breakpoint}tb{vertical-align:text-bottom} 
+	.va-#{$breakpoint}tt{vertical-align:text-top} 
+}
+
+@mixin Resizes($breakpoint) {
+	.rsz-#{$breakpoint}n{resize:none}
+	.rsz-#{$breakpoint}b{resize:both}
+	.rsz-#{$breakpoint}h{resize:horizontal}
+	.rsz-#{$breakpoint}v{resize:vertical}
+}
+
+@mixin Cursors($breakpoint) {
+	.cur-#{$breakpoint}a{cursor:auto}
+	.cur-#{$breakpoint}d{cursor:default}
+	.cur-#{$breakpoint}c{cursor:crosshair}
+	.cur-#{$breakpoint}ha{cursor:hand}
+	.cur-#{$breakpoint}he{cursor:help}
+	.cur-#{$breakpoint}m{cursor:move}
+	.cur-#{$breakpoint}p{cursor:pointer}
+	.cur-#{$breakpoint}t{cursor:text}
+}
+
+@mixin fontWeights($breakpoint) {
+	.fw-#{$breakpoint}n{font-weight:normal}
+	.fw-#{$breakpoint}b{font-weight:bold}
+	.fw-#{$breakpoint}lr{font-weight:lighter}
+	.fw-#{$breakpoint}br{font-weight:bolder}
+}
+
+@mixin fontStyles($breakpoint) {
+	.fs-#{$breakpoint}n{font-style:normal}
+	.fs-#{$breakpoint}i{font-style:italic}
+	.fs-#{$breakpoint}o{font-style:oblique}
+}
+
+@mixin visibilitys($breakpoint) {
+	.v-#{$breakpoint}v{visibility:visible}
+	.v-#{$breakpoint}h{visibility:hidden}
+	.v-#{$breakpoint}c{visibility:collapse}
+}
+
+@mixin textTransforms($breakpoint) {
+	.tt-#{$breakpoint}l{text-transform:lowercase}
+	.tt-#{$breakpoint}u{text-transform:uppercase}
+	.tt-#{$breakpoint}c{text-transform:capitalize}
+	.tt-#{$breakpoint}n{text-transform:none}
+}
+
+@mixin textDecorations($breakpoint) {
+	.td-#{$breakpoint}n{text-decoration:none}
+	.td-#{$breakpoint}u{text-decoration:underline}
+	.td-#{$breakpoint}o{text-decoration:overline}
+	.td-#{$breakpoint}l{text-decoration:line-through}
+}
+
+@mixin whiteSpaces($breakpoint) {
+	.whs-#{$breakpoint}n{white-space:normal}
+	.whs-#{$breakpoint}p{white-space:pre}
+	.whs-#{$breakpoint}nw{white-space:nowrap}
+	.whs-#{$breakpoint}pw{white-space:pre-wrap}
+	.whs-#{$breakpoint}pl{white-space:pre-line}
+}
+
+@mixin whiteSpaceCollapses($breakpoint) {
+	.whsc-#{$breakpoint}n{white-space-collapse:normal}
+	.whsc-#{$breakpoint}k{white-space-collapse:keep-all}
+	.whsc-#{$breakpoint}l{white-space-collapse:loose}
+	.whsc-#{$breakpoint}bs{white-space-collapse:break-strict}
+	.whsc-#{$breakpoint}ba{white-space-collapse:break-all}
+}
+
+@mixin wordBreaks($breakpoint) {
+	.wob-#{$breakpoint}n{word-break:normal}
+	.wob-#{$breakpoint}k{word-break:keep-all}
+	.wob-#{$breakpoint}ba{word-break:break-all}
+}
+
+@mixin wordWraps($breakpoint) {
+	.wow-#{$breakpoint}nm{word-wrap:normal}
+	.wow-#{$breakpoint}n{word-wrap:none}
+	.wow-#{$breakpoint}u{word-wrap:unrestricted}
+	.wow-#{$breakpoint}s{word-wrap:suppress}
+	.wow-#{$breakpoint}b{word-wrap:break-word}
+}
+
+@mixin backgrounds($breakpoint) {
+	.bgsz-#{$breakpoint}a{background-size:auto}
+	.bgsz-#{$breakpoint}ct{background-size:contain}
+	.bgsz-#{$breakpoint}cv{background-size:cover}
+	.bgr-#{$breakpoint}n{background-repeat:no-repeat}
+	.bgr-#{$breakpoint}x{background-repeat:repeat-x}
+	.bgr-#{$breakpoint}y{background-repeat:repeat-y}
+	.bgr-#{$breakpoint}sp{background-repeat:space}
+	.bgr-#{$breakpoint}rd{background-repeat:round}
+	.bgc-#{$breakpoint}t{background-color:transparent}
+}
+
+@mixin listStyles($breakpoint) {
+	.list-#{$breakpoint}n{list-style-type:none}
+	.list-#{$breakpoint}d{list-style-type:disc}
+	.list-#{$breakpoint}c{list-style-type:circle}
+	.list-#{$breakpoint}s{list-style-type:square}
+	.list-#{$breakpoint}dc{list-style-type:decimal}
+	.list-#{$breakpoint}dclz{list-style-type:decimal-leading-zero}
+}
+
+@mixin outlines($breakpoint) {
+	.ol-#{$breakpoint}n{outline:none}
+}
+
+@mixin displays($breakpoint) {
+	.d-#{$breakpoint}n{display:none}
+	.d-#{$breakpoint}i{display:inline}
+	.d-#{$breakpoint}ib{display:inline-block}
+	.d-#{$breakpoint}b{display:block}
+	.d-#{$breakpoint}tb{display:table}
+	.d-#{$breakpoint}tbr{display:table-row}
+	.d-#{$breakpoint}tbc{display:table-cell}
+	.d-#{$breakpoint}f{display:flex}
+	.d-#{$breakpoint}if{display:inline-flex}
+}
+
+@mixin flexDirections($breakpoint) {
+	.fxd-#{$breakpoint}c{flex-direction:column}
+	.fxd-#{$breakpoint}cr{flex-direction:column-reverse}
+	.fxd-#{$breakpoint}r{flex-direction:row}
+	.fxd-#{$breakpoint}rr{flex-direction:row-reverse}
+	.fxw-#{$breakpoint}n{flex-wrap:nowrap}
+	.fxw-#{$breakpoint}w{flex-wrap:wrap}
+	.fxw-#{$breakpoint}wr{flex-wrap:wrap-reverse}
+}
+
+@mixin justifyContents($breakpoint) {
+	.jc-#{$breakpoint}c{justify-content:center}
+	.jc-#{$breakpoint}fe{justify-content:flex-end}
+	.jc-#{$breakpoint}fs{justify-content:flex-start}
+	.jc-#{$breakpoint}sa{justify-content:space-around}
+	.jc-#{$breakpoint}sb{justify-content:space-between}
+}
+
+@mixin alignSelfs($breakpoint) {
+	.as-#{$breakpoint}a{align-self:auto}
+	.as-#{$breakpoint}b{align-self:baseline}
+	.as-#{$breakpoint}c{align-self:center}
+	.as-#{$breakpoint}fe{align-self:flex-end}
+	.as-#{$breakpoint}fs{align-self:flex-start}
+	.as-#{$breakpoint}s{align-self:stretch}
+}
+
+@mixin alignContents($breakpoint) {
+	.ac-#{$breakpoint}c{align-content:center}
+	.ac-#{$breakpoint}fe{align-content:flex-end}
+	.ac-#{$breakpoint}fs{align-content:flex-start}
+	.ac-#{$breakpoint}s{align-content:stretch}
+	.ac-#{$breakpoint}sa{align-content:space-around}
+	.ac-#{$breakpoint}sb{align-content:space-between}
+}
+
+@mixin alignItems($breakpoint) {
+	.ai-#{$breakpoint}b{align-items:baseline}
+	.ai-#{$breakpoint}c{align-items:center}
+	.ai-#{$breakpoint}fe{align-items:flex-end}
+	.ai-#{$breakpoint}fs{align-items:flex-start}
+	.ai-#{$breakpoint}s{align-items:stretch}
+}
+
+@mixin borderStyles($breakpoint) {
+	.bds-#{$breakpoint}n{border-style:none}
+	.bds-#{$breakpoint}h{border-style:hidden}
+	.bds-#{$breakpoint}dt{border-style:dotted}
+	.bds-#{$breakpoint}ds{border-style:dashed}
+	.bds-#{$breakpoint}s{border-style:solid}
+	.bds-#{$breakpoint}db{border-style:double}
+	.bds-#{$breakpoint}dtds{border-style:dot-dash}
+	.bds-#{$breakpoint}dtdtds{border-style:dot-dot-dash}
+	.bds-#{$breakpoint}w{border-style:wave}
+	.bds-#{$breakpoint}g{border-style:groove}
+	.bds-#{$breakpoint}r{border-style:ridge}
+	.bds-#{$breakpoint}i{border-style:inset}
+	.bds-#{$breakpoint}o{border-style:outset}
+}
+
+@mixin sizes($breakpoint) {
+	.w-#{$breakpoint}100{width:100%}
+	.h-#{$breakpoint}100{height:100%}
+	.w-#{$breakpoint}a{width:auto}
+	.h-#{$breakpoint}a{height:auto}
+	.maw-#{$breakpoint}100{max-width:100%}
+	.mah-#{$breakpoint}100{max-height:100%}
+}
+
+@mixin fontStyles($breakpoint) {
+	.fs-#{$breakpoint}n{font-style:normal}
+	.fs-#{$breakpoint}i{font-style:italic}
+	.fs-#{$breakpoint}o{font-style:oblique}
+}
+
+@mixin font-sizes($className, $breakpoint, $styleName, $styleNameb) {
+  $i: $font-from;
+  @while $i <= $font-to {
+    #{$className + $breakpoint + $i} { 
+      #{$styleName}: #{$i + $font-unit};
+      @if $styleNameb != '' {
+      	#{$styleNameb}: #{$i + $font-unit}; 
+      }
+    }
+    @if $i >= $font-to-2 {
+    	$i: $i + $font-step-2;
+    } @else {
+    	$i: $i + $font-step;
+    }
+    
+  }
+}
+@mixin fontSizes($breakpoint) {
+	@include font-sizes('.fz-', $breakpoint, 'font-size', '');
+}

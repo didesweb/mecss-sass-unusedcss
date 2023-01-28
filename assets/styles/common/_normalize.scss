@@ -1,0 +1,26 @@
+/* me.css by Roque Arnás Izquierdo https://didesweb.com/me-css/ */
+
+html{@extend .bxz-bb}
+*,*:before,*:after{@extend .bxz-in}
+body{margin:0}
+article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{@extend .d-b}summary{display:list-item}
+audio,canvas,progress,video{@extend .d-ib}progress{@extend .va-b}
+audio:not([controls]){@extend .d-n;height:0}[hidden],template{@extend .d-n}
+a{background-color:transparent;@extend .td-n}a:active,a:hover{outline-width:0}
+abbr[title]{border-bottom:none;@extend .td-u;text-decoration:underline dotted}
+b,strong{@extend .fw-br}dfn{@extend .fs-i}mark{background:#ff0;color:#000}
+small{font-size:80%}sub,sup{font-size:75%;line-height:0;@extend .pos-r;@extend .va-bl}
+sub{bottom:-0.25em}sup{top:-0.5em}figure{margin:0}img{@extend .bds-n}
+code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}hr{@extend .bxz-cb;height:0;@extend .ov-v}
+button,input,select,textarea,optgroup{font:inherit;margin:0;@extend .ol-n}optgroup{@extend .fw-b}
+button,input{overflow:visible}button,select{@extend .tt-n}
+button,[type=button],[type=reset],[type=submit]{appearance:button}
+button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{@extend .bds-n;padding:0}
+button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}
+fieldset{border: none}
+legend{color:inherit;@extend .d-tb;max-width:100%;padding:0;@extend .whs-n}textarea{@extend .ov-a}
+[type=checkbox],[type=radio]{padding:0}
+[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}
+[type=search]{-webkit-appearance:textfield;outline-offset:-2px}
+[type=search]::-webkit-search-decoration{-webkit-appearance:none}
+::-webkit-file-upload-button{appearance:button;font:inherit}   
