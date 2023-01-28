@@ -3,7 +3,7 @@
     Roque Arnás Izquierdo
     https://didesweb.com/
 */
-var path        = "localhost/unusedcssactualizado";
+var path        = "localhost/didesweb";
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
