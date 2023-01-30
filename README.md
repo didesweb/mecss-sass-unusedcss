@@ -4,5 +4,4 @@ beta 1.0
 Roque Arnás Izquierdo
 https://didesweb.com/
 
-Require gulp 16.15.0
-
+Require gulp 10.14.1
