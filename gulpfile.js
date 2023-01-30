@@ -3,13 +3,13 @@
     Roque Arnás Izquierdo
     https://didesweb.com/
 */
-var path        = "localhost/didesweb";
+var path        = "localhost/unusedcssnew";
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 var sass        = require('gulp-sass');
 var plumber     = require('gulp-plumber');
-var minifycss   = require('gulp-minify-css');
+var cleanCSS   = require('gulp-clean-css');
 var uglify      = require('gulp-uglify');
 var purgecss    = require('gulp-purgecss');
 
@@ -35,7 +35,7 @@ gulp.task('sass', function () {
     gulp.src('assets/styles/**/*.scss')
     .pipe(plumber())
     .pipe(sass())
-    .pipe(minifycss())
+    .pipe(cleanCSS())
     .pipe(gulp.dest('app/styles'))
     .pipe(reload({stream:true}));
 });
